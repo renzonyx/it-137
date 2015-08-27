@@ -1,20 +1,5 @@
 
 
-<?php
-$servername = "server16.binhoster.com";
-$username = "u293323999";
-$password = "09056811104";
-
-
-$conn = new mysqli($servername, $username, $password);
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +7,32 @@ echo "Connected successfully";
 </head>
 <body>
 
+
+<?php
+$servername = "server16.binhoster.com";
+$username = "u293323999";
+$password = "09056811104";
+$db = "u293323999_renz"; 
+
+
+$conn = new mysqli($servername, $username, $password, $db);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$sql = "SELECT * FROM Renzonyx";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+     // output data of each row
+     while($row = $result->fetch_assoc()) {
+         echo "<br> id: ". $row["user_id"]. " - Name: ". $row["username"]. " " . $row["password"] . "<br>";
+     }
+} else {
+     echo "0 results";
+}
+
+$conn->close();
+?>  
 <h1>Slambook</h1>
 
 <form>
