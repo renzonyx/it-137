@@ -70,8 +70,8 @@ $result = mysql_query("SELECT * FROM Renzonyx", $db);
  }
 
  while ($row = mysql_fetch_array($result)) {
- echo "<h2>";
- echo $row[user_id]."";
+ 
+ echo $row[user_id]." ";
  echo "</h2>";
  echo "<p>";
  echo $row[username]."";
