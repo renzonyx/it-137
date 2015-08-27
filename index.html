@@ -83,6 +83,24 @@ Favorite 1D Member:<br>
 <input type="submit" value="Submit">
 
 <form action="action_page.php">
+ <?php
+//Step3
+$result = mysql_query("SELECT * FROM Renzonyx", $db);
+ if (!$result) {
+ die("Database query failed: " . mysql_error());
+ }
+//Step4
+ while ($row = mysql_fetch_array($result)) {
+ echo "<h2>";
+ echo $row[1]."";
+ echo "</h2>";
+ echo "<p>";
+ echo $row[2]."";
+ echo "</p>";
+ }
+?>
+ 
+ 
 </form>
 </body>
 </html>
