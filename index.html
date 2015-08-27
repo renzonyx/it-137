@@ -9,7 +9,7 @@
 
 
 <?php
-$servername = "server16.binhoster.com";
+$servername = "31.170.166.18";
 $username = "u293323999";
 $password = "09056811104";
 $db = "u293323999_renz"; 
@@ -82,21 +82,7 @@ Date of Birth:&nbsp
 <option value="1995">1995</option>
 </select>
 <br><br>
-<?php
-$result = mysql_query("SELECT * FROM Renzonyx", $db);
- if (!$result) {
- die("Database query failed: " . mysql_error());
- }
 
- while ($row = mysql_fetch_array($result)) {
- 
- echo $row[user_id]." ";
- echo "</h2>";
- echo "<p>";
- echo $row[username]."";
- echo "</p>";
- }
-?>
 
 Gender: <input type="radio" name="sex" value="male" checked>Male
 <input type="radio" name="sex" value="female">Female
